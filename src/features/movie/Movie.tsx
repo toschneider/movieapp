@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { useGetMovieByIdQuery, useGetMovieCreditsByIdQuery } from '../../services/movies';
 import {HorizontalList} from '../../components/lists/HorizontalList';
 import Cast from './Cast';
@@ -24,7 +24,7 @@ const Movie = ({Id}: Props) => {
       <h1>Movie</h1>
       <h2>{movie.data.title}</h2>
       { movie.data.poster_path &&
-      <img width="100" height="150"src={"https://image.tmdb.org/t/p/w300_and_h450_bestv2" + movie.data.poster_path}/>
+      <img alt={"movie-img-"+movie.data.id} width="100" height="150"src={"https://image.tmdb.org/t/p/w300_and_h450_bestv2" + movie.data.poster_path}/>
 }
       <h2>Credits</h2>
       <h3><HorizontalList>

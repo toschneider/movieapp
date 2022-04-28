@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Credits } from '../features/movie/CreditsInterface';
 import { Movie } from '../features/movie/MovieInterface';
-import {Cast} from '../features/movie/CreditsInterface';
+// import {Cast} from '../features/movie/CreditsInterface';
 
 // https://developers.themoviedb.org/3/movies/get-movie-credits
 

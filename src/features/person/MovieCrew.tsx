@@ -1,6 +1,6 @@
 import React from 'react';
-import { Routes, Route, Link, useNavigate   } from "react-router-dom";
-import { useGetMovieByIdQuery, useGetMovieCreditsByIdQuery } from '../../services/movies';
+import { useNavigate   } from "react-router-dom";
+// import { useGetMovieByIdQuery, useGetMovieCreditsByIdQuery } from '../../services/movies';
 import {MovieCrew as crew} from './MovieCreditsInterface';
 
 type Props = {
