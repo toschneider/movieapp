@@ -2,11 +2,13 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Credits } from '../features/movie/CreditsInterface';
 import { Movie } from '../features/movie/MovieInterface';
 import {Cast} from '../features/movie/CreditsInterface';
+import {Person} from '../features/person/PersonInterface';
+import {MovieCredits} from '../features/person/MovieCreditsInterface';
 
 // https://developers.themoviedb.org/3/movies/get-movie-credits
 
-export const moviesApi = createApi({
-    reducerPath: 'api/movie',
+export const personsApi = createApi({
+    reducerPath: 'api/person',
     baseQuery: fetchBaseQuery({
     baseUrl: "https://api.themoviedb.org/3/",
         
@@ -15,11 +17,11 @@ export const moviesApi = createApi({
     //   getMovies: builder.query<Movie[], void>({
     //     query: () => 'photos',
     //   }),
-      getMovieById: builder.query<Movie, string>({
-        query: (movieId: string) => `movie/${movieId}?api_key=c768e7308be543456c95aca82d106fcb`,
+      getPersonById: builder.query<Person, string>({
+        query: (personId: string) => `person/${personId}?api_key=c768e7308be543456c95aca82d106fcb`,
       }),
-      getMovieCreditsById: builder.query<Credits, string>({
-        query: (movieId: string) => ({url: `movie/${movieId}/credits?api_key=c768e7308be543456c95aca82d106fcb`}),
+      getMovieCreditsByPersonId: builder.query<MovieCredits, string>({
+        query: (personId: string) => ({url: `person/${personId}/movie_credits?api_key=c768e7308be543456c95aca82d106fcb`}),
       }),
       // getMoviePoster: builder.query<Cast, number>({
       //   query: (movieId: number) => ({url: `movie/${movieId}/credits?api_key=c768e7308be543456c95aca82d106fcb`})
@@ -37,7 +39,7 @@ export const moviesApi = createApi({
 
   export const {
     // useGetMoviesQuery,
-    useGetMovieByIdQuery,
-    useGetMovieCreditsByIdQuery,
+    useGetPersonByIdQuery,
+    useGetMovieCreditsByPersonIdQuery,
     // useUpdatePhotoMutation,
-  } = moviesApi;
+  } = personsApi;
