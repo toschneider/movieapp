@@ -14,7 +14,7 @@ function App() {
       <Route path="/" element={<Movie Id={"120"}></Movie>} />
       <Route path="/movie" element={<Movie Id={"120"}></Movie>} />
       <Route path="/movie/:id" element={<Movie Id={"120"}></Movie>} />
-      <Route path="/person/:id" element={<Person Id={"120"}></Person>} />
+      <Route path="/person/:id" element={<Person ></Person>} />
       </Routes>
     </BrowserRouter>
     </div>
